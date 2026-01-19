@@ -9,47 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="shared-styles.css">
     <style>
-        .priority-high {
-            background: rgba(245, 87, 108, 0.2);
-            color: #f5576c;
-            border: 1px solid rgba(245, 87, 108, 0.3);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .priority-medium {
-            background: rgba(254, 225, 64, 0.1);
-            color: #fee140;
-            border: 1px solid rgba(254, 225, 64, 0.3);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .priority-low {
-            background: rgba(67, 233, 123, 0.1);
-            color: #43e97b;
-            border: 1px solid rgba(67, 233, 123, 0.3);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .topic-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .topic-text {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0;
-        }
+        /* Sub-page specific overrides if any */
     </style>
 </head>
 
@@ -285,7 +245,8 @@
                     <h3>什麼是工具堆疊？</h3>
                     <p>單一 AI 工具往往有其極限。工具堆疊 (Stacking) 是指將多個具備不同強項的 AI 服務串接起來。例如：用 <strong>Claude</strong> 處理長文本邏輯 -> 用
                         <strong>Midjourney</strong> 生成高品質配圖 -> 用 <strong>ElevenLabs</strong> 進行配音 -> 最後在
-                        <strong>Canva</strong> 進行排版。</p>
+                        <strong>Canva</strong> 進行排版。
+                    </p>
                     <ul>
                         <li><strong>核心技術連結:</strong> 利用 <strong>Make.com</strong> 或 <strong>Zapier</strong> 作為膠水層，可以將
                             ChatGPT 的 API 輸出的 JSON 資料自動填入 Google Sheets，再觸發後續的 AI 處理流程。</li>
@@ -434,7 +395,8 @@
                     <p>與普通的代碼補全不同，代理模式下的 AI（如 Claude Code CLI）具備自主執行終端命令的能力。這意味著它能完成一個閉環任務，而不只是寫代碼。</p>
                     <ul>
                         <li><strong>自主環境感知:</strong> AI 能自動運行 <code>npm test</code> 或
-                            <code>pytest</code>，如果測試失敗，它會讀取報錯日誌，主動修正代碼並再次運行，直到測試通過。</li>
+                            <code>pytest</code>，如果測試失敗，它會讀取報錯日誌，主動修正代碼並再次運行，直到測試通過。
+                        </li>
                         <li><strong>全自動部署整合:</strong> 可以串接 <code>gh pr create</code> 命令，讓 AI 在修復 Bug 後自動提交 Pull Request
                             並撰寫更新日誌。</li>
                         <li><strong>跨文件重構:</strong> 代理可以理解大型項目的上下文，同時修改 10 個以上的文件以確保全局型別的一致性。</li>
