@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學習資源與其他 | 學習中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        .priority-high {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-medium {
+            background: rgba(254, 225, 64, 0.1);
+            color: #fee140;
+            border: 1px solid rgba(254, 225, 64, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            background: rgba(67, 233, 123, 0.1);
+            color: #43e97b;
+            border: 1px solid rgba(67, 233, 123, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .topic-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LEARNING HUB</a>
+            <a href="index.html" class="back-link">← 返主頁</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge"
+            style="display:inline-block; padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+            📚 Extra Resources</div>
+        <h1 class="page-title">學習資源與其他</h1>
+        <p class="page-desc">深度解析 4 個核心資源。精選華語圈最頂尖課程與高效率 AI 工作流實戰案例。</p>
+    </header>
+
+    <main class="main-content">
+        <!-- 45. NTU OCW -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">45. 台大開放式課程 (NTU OCW)</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">獲取頂尖學術資源：從計算機科學基石到機器學習頂尖理論。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>為什麼要看台大 OCW？</h3>
+                    <p>雖然現在 AI 教程滿天飛，但「系統化的底層知識」依然是頂級工程師的護城河。台大開放式課程 (OpenCourseWare)
+                        提供了全球華語圈最專業、最成體系的教學。對於想深入機器學習原理的人來說，這裡是不可或缺的寶庫。</p>
+
+                    <h3>推薦王牌教授與課程</h3>
+                    <ul>
+                        <li><strong>林軒田教授 - 機器學習基石:</strong> 全球知名的 AI
+                            入門課。林教授能將複雜的統計學與數學模型講得通俗易懂。這門課將幫助你理解「為什麼模型會學錯」以及「如何優化學習演算法」。</li>
+                        <li><strong>葉丙成教授 - 計算機程式設計:</strong> 對於零基礎或想重溫 C/C++ 基礎的人來說，葉教授的幽默風格能讓你愛上編程。這對於理解 AI
+                            生成代碼的內存管理邏輯大有裨益。</li>
+                    </ul>
+
+                    <h3>學習策略：AI 陪讀法</h3>
+                    <p>在觀看 NTU OCW 時，你可以將課程的講義 (PDF) 喂給 Gemini，並對它說：「請作為我的助教，幫我總結這一段林教授講的『VC 轉折點』是什麼意思，並給我出 3
+                        道練習題。」這種將頂尖課程與 AI 結合的方式，是目前最強的學習路徑。</p>
+
+                    <a href="http://ocw.aca.ntu.edu.tw/ntu-ocw/" target="_blank" class="category-link">進入台大 OCW 官網 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 46. AI Workflow -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">46. AI 工作流：Stitch → Vercel 全紀錄</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">實測 AI 時代的「光速部署」：從一個原始創意到全球可訪問的網頁應用。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是極速開發流？</h3>
+                    <p>過去開發一個功能，我們需要：畫 UI -> 寫組件 -> 寫邏輯 -> 測試 -> 推送代碼。現在，這一切可以被封裝在一個連貫的 AI 指令鏈中。Stitch (創意捕捉) 到 Vercel
+                        (全球分發) 是目前最成熟的開源閉環。</p>
+
+                    <h3>工作流深度拆解</h3>
+                    <ol>
+                        <li><strong>Stitch (Input):</strong> 快速記錄你的「軟體感覺」。比如一個手繪草圖、一段錄音或者幾句破碎的描述。</li>
+                        <li><strong>Gemini 1.5 Pro (Planning):</strong> 將破碎創意轉換為詳細的 <code>REQUIREMENTS.md</code> 與
+                            <code>TECHNICAL_SPEC.md</code>。這是 AI 時代的項目經理。
+                        </li>
+                        <li><strong>Antigravity/Claude Code (Dev):</strong> 自動化生成代碼。Agent 會主動建立文件、安裝依賴 (npm
+                            install)、編寫核心邏輯。</li>
+                        <li><strong>Vercel (Deploy):</strong> 通過 GitHub Hook 自動觸發部署。當 AI 推送代碼後，你只需要點開 Vercel 發給你的網址即可。
+                        </li>
+                    </ol>
+
+                    <h3>效率驗證</h3>
+                    <p>我們實測在 30 分鐘內建立一個具備向量搜索功能的「個人圖書管理系統」。傳統開發需要 2-3 天，現在只需要調整三次 Prompt。這就是未來「一人生產力」的標準樣貌。</p>
+                    <a href="https://vercel.com/docs/deployments/overview" target="_blank" class="category-link">了解
+                        Vercel 自動部署機制 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 47. Napkin AI -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">47. Napkin AI 文字轉圖表革命</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">別再手繪架構圖！讓 AI 直接根據你的文字描述生成精美的數據圖表與流程圖。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>解決痛點：文字太多，讀者不看</h3>
+                    <p>在撰寫技術文檔或商業計劃書時，圖片的資訊密度遠高於文字。Napkin AI 的核心在於，它不是生成「藝術畫」，而是生成「邏輯圖」。</p>
+
+                    <h3>功能深度分析</h3>
+                    <ul>
+                        <li><strong>語義理解圖表化:</strong> 當你寫「用戶經過 A 點後會分流到 B 或 C」，它會自動劃出一個分叉的流程圖，省去了在 Figma 或 PPT 裡拉線的時間。
+                        </li>
+                        <li><strong>風格統一化:</strong> 所有生成的圖表可以共享一套配色與字體，讓你的整份技術文檔看起來具備極高的專業度。</li>
+                        <li><strong>智能組件:</strong> 輸出的不是死板的圖片，而是可交互的元件，你可以隨時修改箭頭位置、增加節點或更改文字內容，AI 會自動重排布局。</li>
+                    </ul>
+
+                    <a href="https://www.napkin.ai/" target="_blank" class="category-link">進入 Napkin AI 官網 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 48. VideoCaptioner -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">48. VideoCaptioner 卡卡字幕助手</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">本地運行的強大開源影片字幕工具，支持 Whisper 高精確度識別。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是卡卡字幕助手？</h3>
+                    <p>這是一個基於 Python 與 Whisper 開源模型的工具，專門用於處理影片字幕。相比於付費的線上字幕服務，它完全免費、支持離線運行，且隱私更安全。</p>
+
+                    <h3>技術優勢解析</h3>
+                    <ul>
+                        <li><strong>Whisper 核心:</strong> 使用 OpenAI 開源的最強語音識別模型，中英文識別率極高，能自動處理口音與背景噪聲。</li>
+                        <li><strong>智能斷句:</strong> 這是其特點之一。它能根據語意而非僅僅根據停頓來切分字幕條，讓觀眾閱讀起來更自然。</li>
+                        <li><strong>多格式導出:</strong> 支持 .srt, .vtt 以及直接將字幕壓制到影片中。</li>
+                    </ul>
+
+                    <a href="https://github.com/ishare20/VideoCaptioner" target="_blank" class="category-link">GitHub
+                        開源倉庫 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>學習中心 | 學習資源與其他專頁</p>
+        <p>持續更新中 · 2026</p>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

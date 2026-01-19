@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完整學習清單 | Learning Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --high-priority: #ef4444;
+            --medium-priority: #f59e0b;
+            --low-priority: #10b981;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px 40px;
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card p {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .section-header .count {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .learning-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .learning-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .item-number {
+            background: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+
+        .item-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .priority-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-high {
+            background: #fee2e2;
+            color: var(--high-priority);
+        }
+
+        .priority-medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .priority-low {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .item-description {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .item-details {
+            margin-top: 15px;
+        }
+
+        .detail-section {
+            margin-bottom: 12px;
+        }
+
+        .detail-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-list li {
+            padding: 6px 0 6px 24px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .detail-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .path-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .path-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .path-section ol {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .path-section ol li {
+            padding: 4px 0;
+        }
+
+        .note-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--medium-priority);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .note-box h3 {
+            color: #d97706;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .note-box ol, .note-box ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .note-box li {
+            padding: 4px 0;
+        }
+
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .resource-link {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .resource-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        footer {
+            background: #f8fafc;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .emoji {
+            font-style: normal;
+            margin-right: 8px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .stats {
+                padding: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 1.4em;
+            }
+
+            .item-title {
+                font-size: 1.1em;
+            }
+        }
+
+        .toc {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc ul li {
+            padding: 8px 0;
+        }
+
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 完整學習清單 | Learning Checklist</h1>
+            <p>系統化整理你的學習路徑 - 包含 48+ 個學習項目</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>總學習項目</h3>
+                <p>48+</p>
+            </div>
+            <div class="stat-card">
+                <h3>分類數量</h3>
+                <p>6 大類</p>
+            </div>
+            <div class="stat-card">
+                <h3>完成率</h3>
+                <p>0%</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📑 目錄</h3>
+                <ul>
+                    <li><a href="#ai-development">🤖 AI 開發與工程 (11 項)</a></li>
+                    <li><a href="#claude-tools">🛠️ Claude 工具生態 (9 項)</a></li>
+                    <li><a href="#google-ai">🌐 Google AI 生態 (13 項)</a></li>
+                    <li><a href="#dev-tools">💻 開發工具與平台 (10 項)</a></li>
+                    <li><a href="#database">💾 資料庫與後端 (1 項)</a></li>
+                    <li><a href="#online-learning">📚 線上學習平台 (1 項)</a></li>
+                    <li><a href="#other">🚀 其他工具與專案 (3 項)</a></li>
+                    <li><a href="#learning-suggestions">📋 學習建議</a></li>
+                    <li><a href="#learning-paths">🎯 學習路徑建議</a></li>
+                </ul>
+            </div>
+
+            <!-- AI Development Section -->
+            <div class="section" id="ai-development">
+                <div class="section-header">
+                    <h2><span class="emoji">🤖</span>AI 開發與工程</h2>
+                    <span class="count">11 項</span>
+                </div>
+
+                <!-- Item 1 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">1</div>
+                        <div class="item-title">學習 AI 代理 (AI Agents)</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        使用 LangGraph、AutoGen 和 CrewAI 等平台建立多代理系統，完成需要推理、協調和記憶的複雜任務。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">學習重點：</div>
+                            <ul class="detail-list">
+                                <li>LangGraph 有狀態多代理應用</li>
+                                <li>AutoGen 多代理對話框架</li>
+                                <li>CrewAI 角色協作框架</li>
+                                <li>Agent Skills 技能系統</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">2</div>
+                        <div class="item-title">學習 AI 工作流程自動化 (AI Workflow Automation)</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        使用 AI 工具自動化日常工作流程，整合 Notion、ClickUp、Zapier 和 Asana 等平台。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">應用場景：</div>
+                            <ul class="detail-list">
+                                <li>文件處理與智能分類</li>
+                                <li>郵件自動回覆</li>
+                                <li>資料擷取與格式化</li>
+                                <li>報告自動生成</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">3</div>
+                        <div class="item-title">學習多模態 AI (Multimodal AI)</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        探索能夠處理文本、圖像、音訊、視訊等多種資料類型的 AI 模型。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">代表模型：</div>
+                            <ul class="detail-list">
+                                <li>GPT-4V (OpenAI)</li>
+                                <li>Claude 3 (Anthropic)</li>
+                                <li>Gemini (Google)</li>
+                                <li>DALL-E 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">4</div>
+                        <div class="item-title">學習 AI 工具堆疊 (AI Tool Stacking)</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        整合多個 AI 工具和平台，建立跨任務的自訂工作流程。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">常見組合：</div>
+                            <ul class="detail-list">
+                                <li>Notion + Claude</li>
+                                <li>Zapier + ChatGPT</li>
+                                <li>Airtable + Make</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">5</div>
+                        <div class="item-title">學習 AI 影片內容生成</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        使用 AI 工具進行影片創作，從腳本到成品的完整流程。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">主要工具：</div>
+                            <ul class="detail-list">
+                                <li>Runway ML、Pika Labs</li>
+                                <li>D-ID、Synthesia</li>
+                                <li>ElevenLabs (配音)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">6</div>
+                        <div class="item-title">學習微調與 AI 助手 (Fine-Tuning and AI Assistants)</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        使用 GPT Builder、Hugging Face 和 Cohere 建立特定領域的 AI 助手。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">平台：</div>
+                            <ul class="detail-list">
+                                <li>GPT Builder</li>
+                                <li>Hugging Face</li>
+                                <li>Cohere</li>
+                                <li>Together AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">7</div>
+                        <div class="item-title">學習語音 AI 與虛擬化身 (Voice AI and Avatars)</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        探索語音合成、語音克隆和虛擬化身技術。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">技術：</div>
+                            <ul class="detail-list">
+                                <li>TTS (Text-to-Speech)</li>
+                                <li>語音克隆</li>
+                                <li>虛擬化身生成</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">8</div>
+                        <div class="item-title">學習提示工程 (Prompt Engineering)</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        掌握與 AI 模型溝通的藝術，撰寫有效的提示詞。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">核心原則：</div>
+                            <ul class="detail-list">
+                                <li>清晰明確</li>
+                                <li>提供上下文</li>
+                                <li>結構化 (XML/Markdown)</li>
+                                <li>範例導向</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title">框架：</div>
+                            <ul class="detail-list">
+                                <li>RICE、PASEC、RTF</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">9</div>
+                        <div class="item-title">學習檢索增強生成 (RAG)</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        結合資料檢索和生成式 AI，建立更準確的應用。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">核心組件：</div>
+                            <ul class="detail-list">
+                                <li>文檔載入與分割</li>
+                                <li>向量化與向量資料庫</li>
+                                <li>檢索器與生成器</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title">工具：</div>
+                            <ul class="detail-list">
+                                <li>LangChain、LlamaIndex</li>
+                                <li>Chroma、FAISS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">10</div>
+                        <div class="item-title">學習 AI 開發新標準（AGENTS.md）</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        掌握 AI 開發的 DDD (Domain-Driven Design) 範本模板。
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">11</div>
+                        <div class="item-title">學習 AI 編碼工具代理模式</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        探索 OpenCode、Claude Code 和 Gemini CLI 的代理模式開發。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Claude Tools Section -->
+            <div class="section" id="claude-tools">
+                <div class="section-header">
+                    <h2><span class="emoji">🛠️</span>Claude 工具生態</h2>
+                    <span class="count">9 項</span>
+                </div>
+
+                <!-- Items 12-20 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">12</div>
+                        <div class="item-title">學習 Claude Code 生產力工具與技巧</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        掌握 Claude Code 的進階功能，包括權限管理、插件使用等。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">核心功能：</div>
+                            <ul class="detail-list">
+                                <li>自動化編碼</li>
+                                <li>智能重構</li>
+                                <li>Git 整合</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title">省時技巧：</div>
+                            <ul class="detail-list">
+                                <li>--dangerously-skip-permissions 跳過權限</li>
+                                <li>code-simplifier Agent</li>
+                                <li>Ralph-Wiggum Loop</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">13</div>
+                        <div class="item-title">學習 Claude Code code-simplifier Agent</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        使用代碼簡化代理自動優化和清理程式碼。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">14</div>
+                        <div class="item-title">學習 n8n + Claude Code 整合</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        結合 n8n 自動化工具和 Claude Code 創造強大工作流程。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">15</div>
+                        <div class="item-title">學習 Claude Speech-to-text 插件</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        為 Claude Code 添加語音輸入功能。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">16</div>
+                        <div class="item-title">學習 Claude Code 全自動生活管理系統案例</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        參考 Molly Cantillon 的案例，用 Claude Code 打造全自動生活管理系統。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">17</div>
+                        <div class="item-title">學習 Claude Code 之父 Boris 的 AI 編程方法論</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        學習 Boris 在 30 天內完全依靠 AI 完成編程工作的方法。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">五個核心心法：</div>
+                            <ul class="detail-list">
+                                <li>壓榨並發能力</li>
+                                <li>打造團隊大腦</li>
+                                <li>極致自動化</li>
+                                <li>慢即是快</li>
+                                <li>讓 AI 持續學習</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">18</div>
+                        <div class="item-title">學習 Claude Code 手機版操作與 GitHub 整合</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        在手機上使用 Claude Code 進行編碼。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">19</div>
+                        <div class="item-title">學習 Claude Code 長時間運行技巧 (Ralph-Wiggum + Stop Hook)</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        讓 Claude Code 連續運行超過一天。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">20</div>
+                        <div class="item-title">學習 Ralph Wiggum Loop - 5行程式碼革命AI編程</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        讓 AI 持續迭代直到任務完成，無需人類干預。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google AI Section -->
+            <div class="section" id="google-ai">
+                <div class="section-header">
+                    <h2><span class="emoji">🌐</span>Google AI 生態</h2>
+                    <span class="count">13 項</span>
+                </div>
+
+                <!-- Items 21-33 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">21</div>
+                        <div class="item-title">Google GenTabs AI 工具</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        探索 Google 的智能標籤管理工具。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">22</div>
+                        <div class="item-title">Gemini Voice AI Building</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        學習使用 Gemini 的語音 AI 功能進行應用開發。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">23</div>
+                        <div class="item-title">學習 Google CC AI 生產力助理</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        使用 Google CC AI 提升日常工作效率。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">24</div>
+                        <div class="item-title">學習 Google Skills 職場技能培訓課程</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        透過 Google Skills 平台學習職場技能。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">課程類別：</div>
+                            <ul class="detail-list">
+                                <li>數位行銷</li>
+                                <li>資料分析</li>
+                                <li>專案管理</li>
+                                <li>程式設計</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">25</div>
+                        <div class="item-title">學習取得 Google Gemini API 金鑰</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        5 個步驟免費取得 API 金鑰。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">26</div>
+                        <div class="item-title">學習 Google Learn Your Way（個人化 AI 學習工具）</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        提供 5 種不同的個人化學習形式。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">學習形式：</div>
+                            <ul class="detail-list">
+                                <li>互動式文字</li>
+                                <li>對話式音訊</li>
+                                <li>互動式簡報</li>
+                                <li>心智圖</li>
+                                <li>個人化筆記</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">27</div>
+                        <div class="item-title">學習用 AI + GAS 自動化生成 Google 表單</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        3 分鐘內建立完整的 Google 表單。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">28</div>
+                        <div class="item-title">學習 mite.now 部署工具</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        一鍵部署 Google AI Studio 專案。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">29</div>
+                        <div class="item-title">學習用 GPT-SoVITS + Google Antigravity 實現 AI 語音克隆</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        高品質 AI 語音克隆技術。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">30</div>
+                        <div class="item-title">學習 Gemini 提示設計全攻略</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        掌握 Gemini 提示設計的核心技巧。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">專屬技巧：</div>
+                            <ul class="detail-list">
+                                <li>Role、Instruction、Context、Task 結構</li>
+                                <li>XML/Markdown 標籤</li>
+                                <li>要求先思考再回答</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">31</div>
+                        <div class="item-title">學習 Gemini PASEC Prompt 框架</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        專為 Gemini 設計的提示詞框架。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">PASEC：</div>
+                            <ul class="detail-list">
+                                <li>Purpose (目的)</li>
+                                <li>Audience (受眾)</li>
+                                <li>Style (風格)</li>
+                                <li>Examples (範例)</li>
+                                <li>Constraints (限制)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">32</div>
+                        <div class="item-title">學習 Gemini Canvas 部署到 Zeabur</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        將設計工具部署到雲端平台。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">33</div>
+                        <div class="item-title">學習 NotebookLM 圖檔文字修正技巧 (Gemini + Canva)</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        修正 AI 生成圖片中的文字錯誤。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dev Tools Section -->
+            <div class="section" id="dev-tools">
+                <div class="section-header">
+                    <h2><span class="emoji">💻</span>開發工具與平台</h2>
+                    <span class="count">10 項</span>
+                </div>
+
+                <!-- Items 34-43 -->
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">34</div>
+                        <div class="item-title">學習網頁開發路線圖</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        完整的前端到全端開發學習路徑。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">學習階段：</div>
+                            <ul class="detail-list">
+                                <li>前端基礎：HTML5、CSS3、JavaScript</li>
+                                <li>前端框架：React、Vue.js</li>
+                                <li>後端開發：Node.js、Express、資料庫</li>
+                                <li>進階技能：TypeScript、GraphQL、Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">35</div>
+                        <div class="item-title">學習 SaaS 開發 (SaaS Development)</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        建立可擴展的軟體即服務應用。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">技術棧：</div>
+                            <ul class="detail-list">
+                                <li>前端：React、Next.js、Tailwind CSS</li>
+                                <li>後端：Node.js、PostgreSQL</li>
+                                <li>DevOps：Docker、Kubernetes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">36</div>
+                        <div class="item-title">學習 Vibe Kanban (BloopAI)</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        AI 增強的看板工具。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">37</div>
+                        <div class="item-title">學習 Makerworld 3D 模型平台</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        3D 模型分享社群。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">38</div>
+                        <div class="item-title">學習 Wave Terminal 開源終端機</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        現代化的終端機工具。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">39</div>
+                        <div class="item-title">學習 Edge TTS Text-to-Speech 工具</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        微軟高品質語音合成。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">40</div>
+                        <div class="item-title">學習 Airtable + N8N + Lovable 自動化整合</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        建立強大的自動化工作流程。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">41</div>
+                        <div class="item-title">學習 Lifeforge 自架生活管理系統</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        建立開源生活管理系統。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">42</div>
+                        <div class="item-title">學習圖片型 PDF 轉 TXT 工具</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        使用 OCR 技術提取文字。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">43</div>
+                        <div class="item-title">學習 YouTube Link Grabber Chrome 擴充功能</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        快速收集 YouTube 影片連結。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Section -->
+            <div class="section" id="database">
+                <div class="section-header">
+                    <h2><span class="emoji">💾</span>資料庫與後端</h2>
+                    <span class="count">1 項</span>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">44</div>
+                        <div class="item-title">學習 Postgres 資料庫入門課程</div>
+                        <span class="priority-badge priority-high">⭐ High</span>
+                    </div>
+                    <div class="item-description">
+                        掌握 PostgreSQL 資料庫系統。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">課程內容：</div>
+                            <ul class="detail-list">
+                                <li>基礎篇：SQL 語法、表格關聯</li>
+                                <li>進階篇：索引優化、視圖、觸發器</li>
+                                <li>實戰篇：備份還原、效能調優</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Online Learning Section -->
+            <div class="section" id="online-learning">
+                <div class="section-header">
+                    <h2><span class="emoji">📚</span>線上學習平台</h2>
+                    <span class="count">1 項</span>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">45</div>
+                        <div class="item-title">學習台大開放式課程</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        探索台灣大學免費線上課程。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">推薦課程：</div>
+                            <ul class="detail-list">
+                                <li>計算機程式設計（葉丙成）</li>
+                                <li>機器學習基石（林軒田）</li>
+                                <li>資料結構與演算法</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Section -->
+            <div class="section" id="other">
+                <div class="section-header">
+                    <h2><span class="emoji">🚀</span>其他工具與專案</h2>
+                    <span class="count">3 項</span>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">46</div>
+                        <div class="item-title">AI 工作流實測：Stitch → Gemini 3 → Antigravity → Vercel</div>
+                        <span class="priority-badge priority-medium">⭐ Medium</span>
+                    </div>
+                    <div class="item-description">
+                        打造光速部署流程。
+                    </div>
+                    <div class="item-details">
+                        <div class="detail-section">
+                            <div class="detail-title">工作流程：</div>
+                            <ul class="detail-list">
+                                <li>Stitch：組合輸入</li>
+                                <li>Gemini 3：規劃架構</li>
+                                <li>Antigravity：執行開發</li>
+                                <li>Vercel：自動部署</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">47</div>
+                        <div class="item-title">學習 Napkin AI 文字轉圖表工具</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        快速將文字轉換為視覺化圖表。
+                    </div>
+                </div>
+
+                <div class="learning-item">
+                    <div class="item-header">
+                        <div class="item-number">48</div>
+                        <div class="item-title">學習 VideoCaptioner 卡卡字幕助手</div>
+                        <span class="priority-badge priority-low">⭐ Low</span>
+                    </div>
+                    <div class="item-description">
+                        自動為影片添加字幕。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Suggestions -->
+            <div class="section" id="learning-suggestions">
+                <div class="section-header">
+                    <h2><span class="emoji">📋</span>學習建議</h2>
+                </div>
+
+                <div class="note-box">
+                    <h3>優先學習（High Priority）</h3>
+                    <ol>
+                        <li>AI 代理 (AI Agents)</li>
+                        <li>AI 工作流程自動化</li>
+                        <li>提示工程 (Prompt Engineering)</li>
+                        <li>檢索增強生成 (RAG)</li>
+                        <li>Claude Code 生產力工具</li>
+                        <li>Gemini 提示設計全攻略</li>
+                        <li>網頁開發路線圖</li>
+                        <li>SaaS 開發</li>
+                        <li>Postgres 資料庫</li>
+                    </ol>
+                </div>
+
+                <div class="path-section">
+                    <h3>進階學習（Medium Priority）</h3>
+                    <ul>
+                        <li>多模態 AI</li>
+                        <li>Claude Code 相關工具</li>
+                        <li>Google AI 生態系統工具</li>
+                        <li>自動化整合工具</li>
+                    </ul>
+                </div>
+
+                <div class="path-section">
+                    <h3>探索學習（Low Priority）</h3>
+                    <ul>
+                        <li>各種輔助工具和平台</li>
+                        <li>特定應用場景工具</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Learning Paths -->
+            <div class="section" id="learning-paths">
+                <div class="section-header">
+                    <h2><span class="emoji">🎯</span>學習路徑建議</h2>
+                </div>
+
+                <div class="path-section">
+                    <h3>路徑一：AI 開發工程師</h3>
+                    <ol>
+                        <li>提示工程基礎</li>
+                        <li>AI 代理開發</li>
+                        <li>RAG 系統建立</li>
+                        <li>多模態 AI 應用</li>
+                    </ol>
+                </div>
+
+                <div class="path-section">
+                    <h3>路徑二：全端開發者</h3>
+                    <ol>
+                        <li>網頁開發基礎</li>
+                        <li>SaaS 開發</li>
+                        <li>Postgres 資料庫</li>
+                        <li>AI 工具整合</li>
+                    </ol>
+                </div>
+
+                <div class="path-section">
+                    <h3>路徑三：生產力大師</h3>
+                    <ol>
+                        <li>AI 工作流程自動化</li>
+                        <li>Claude Code 工具鏈</li>
+                        <li>Google AI 生態</li>
+                        <li>自動化整合平台</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="section">
+                <div class="section-header">
+                    <h2><span class="emoji">📌</span>注意事項</h2>
+                </div>
+
+                <div class="note-box">
+                    <ol>
+                        <li><strong>循序漸進</strong>：從基礎開始，不要急於求成</li>
+                        <li><strong>實作為主</strong>：每個項目都要動手實作</li>
+                        <li><strong>建立專案</strong>：將學到的技能應用到實際專案</li>
+                        <li><strong>持續更新</strong>：AI 領域發展快速，保持學習</li>
+                        <li><strong>社群交流</strong>：加入相關社群，與他人交流學習</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="section">
+                <div class="section-header">
+                    <h2><span class="emoji">🔗</span>相關資源</h2>
+                </div>
+
+                <div class="resource-links">
+                    <a href="https://docs.claude.com" class="resource-link" target="_blank">Anthropic Claude 文檔</a>
+                    <a href="https://aistudio.google.com" class="resource-link" target="_blank">Google AI Studio</a>
+                    <a href="https://agentskills.io" class="resource-link" target="_blank">Agent Skills 官網</a>
+                    <a href="https://python.langchain.com" class="resource-link" target="_blank">LangChain 文檔</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>更新日期</strong>：2026-01-19</p>
+            <p><strong>總項目數</strong>：48+</p>
+            <p><strong>涵蓋領域</strong>：AI 開發、工具生態、開發平台、資料庫、學習資源</p>
+            <hr style="margin: 20px 0;">
+            <p style="font-size: 1.2em;">祝你學習愉快！🚀</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.learning-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+
+        // Print statistics
+        console.log('Learning Checklist loaded successfully!');
+        console.log('Total items: 48+');
+        console.log('Categories: 6');
+    </script>
+</body>
+</html>

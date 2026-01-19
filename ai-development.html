@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 開發與工程 | 學習中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        .priority-high {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-medium {
+            background: rgba(254, 225, 64, 0.1);
+            color: #fee140;
+            border: 1px solid rgba(254, 225, 64, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            background: rgba(67, 233, 123, 0.1);
+            color: #43e97b;
+            border: 1px solid rgba(67, 233, 123, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .topic-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LEARNING HUB</a>
+            <a href="index.html" class="back-link">← 返主頁</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge"
+            style="display:inline-block; padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+            🤖 AI Engineering</div>
+        <h1 class="page-title">AI 開發與工程</h1>
+        <p class="page-desc">深度解析 11 個核心項目。點擊下方卡片展開詳細學習指南、實戰案例與技術深度分析。</p>
+    </header>
+
+    <main class="main-content">
+        <!-- 1. AI Agents -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">1. 學習 AI 代理 (AI Agents)</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">掌握多代理協同工作的核心邏輯與自主決策框架。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>技術深潛：為什麼 AI Agents 是未來？</h3>
+                    <p>傳統的 AI 互動通常是單次對話 (Chat-based)，但在實際工程應用中，任務往往非常複雜，單次對話難以解決。AI Agents (人工智能代理) 的核心在於賦予 AI
+                        「自主性」。一個代理不再只是回答問題，而是會根據目標去思考、規劃路徑、調用外部工具、觀察結果並不斷修正自己的行為。</p>
+
+                    <h3>核心框架全解析</h3>
+                    <ul>
+                        <li><strong>LangGraph:</strong> 這是 LangChain 家族中最強大的成員。與傳統的線性鏈條不同，LangGraph 允許你建立「循環」(Cyclical)
+                            流程。這對於需要反覆自我修正、檢查對錯的任務至關重要。它可以管理「狀態」(State)，讓多個代理共享同一個記憶地圖。</li>
+                        <li><strong>CrewAI:</strong> 如果各個代理是獨立的角色，CrewAI 就是他們的「劇本」。它強調角色扮演（Role-playing），你可以定義
+                            Researcher, Analyst 和 Writer，他們會自動溝通並交接工作。這非常適合內容創作、法律分析或市場調研等商業流程。</li>
+                        <li><strong>AutoGen:</strong> 微軟推出的框架，重點在於代理之間的對話。它極大簡化了「讓多個智能體互相聊天來解決問題」的複雜度。</li>
+                    </ul>
+
+                    <h3>實戰練習建議</h3>
+                    <div class="step-box">
+                        <strong>項目：AI 自動化股價分析員</strong><br>
+                        1. 建立一個 <strong>Crawler Agent</strong>，負責調用 Yahoo Finance API 獲取數據。<br>
+                        2. 建立一個 <strong>Analyst Agent</strong>，負責計算 RSI、MACD 等指標並判斷趨勢。<br>
+                        3. 建立一個 <strong>Risk Manager</strong>，檢查 Analyst 的結論是否過於激進。<br>
+                        4. 最後由 <strong>Reporter</strong> 生成一份專業的分析報告。<br>
+                        嘗試使用 CrewAI 來編排這個流程。
+                    </div>
+
+                    <a href="https://www.crewai.com/" target="_blank" class="category-link">進入 CrewAI 學習資源 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. AI Workflow Automation -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">2. AI 工作流程自動化</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">將大型語言模型整合至現有的自動化工具鏈中。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>自動化 2.0：生成式 AI 的加入</h3>
+                    <p>以往的自動化 (如 Zapier) 是基於規則的 (IF This Then That)。比如「如果收到標題含有發票的郵件，就下載附件」。這種方式無法處理模糊信息。AI
+                        自動化的出現，讓機器能「理解內容」。</p>
+
+                    <h3>關鍵工具鏈</h3>
+                    <ul>
+                        <li><strong>n8n:</strong> 開源的自動化平台，支持自定義代碼節點。你可以直接在節點內調用 Claude API 來處理流經該節點的數據。相比
+                            Zapier，其靈活性高出數倍且更節省成本。</li>
+                        <li><strong>Make.com:</strong> 視覺化非常出色，適合快速原型設計。它的邏輯過濾器非常強大。</li>
+                        <li><strong>Zapier Central:</strong> 最新推出的 AI 核心，允許你在 Zapier 中訓練一個小助手來負責判斷邏輯。</li>
+                    </ul>
+
+                    <h3>深度案例：智能電子商務客服</h3>
+                    <p>當收到客戶查詢時，流程如下：<br>
+                        1. <strong>n8n</strong> 接入郵件。<br>
+                        2. <strong>AI 節點</strong> 分析郵件情感與問題類別 (例如：查詢訂單、抱怨產品質量)。<br>
+                        3. AI 自動查詢數據庫獲取訂單進度。<br>
+                        4. 生成一段具備同理心的回覆。如果客戶情緒極差，自動抄送給人工主管。<br>
+                        5. 整個過程在 30 秒內完成。</p>
+
+                    <a href="https://n8n.io/" target="_blank" class="category-link">查看 n8n AI 教程 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Multimodal AI -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">3. 多模態 AI (Multimodal AI)</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">跨越文字、圖片與影片的邊界，實現全感官理解。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>技術原理：跨模態對齊</h3>
+                    <p>多模態 AI 的核心在於模型學會了將不同類型的數據（例如圖片中的「狗」和文字「狗」）映射到同一個向量空間中的鄰近位置。這使得模型可以「看到」你的草圖並「寫出」對應的代碼。</p>
+
+                    <h3>核心應用場景</h3>
+                    <ul>
+                        <li><strong>視覺代碼生成 (Vision to Code):</strong> 上傳一個 Landing Page 的截圖，讓 Claude 生成完整的 React +
+                            Tailwind 代碼。這將開發效率提升了 90% 以上。</li>
+                        <li><strong>文檔分析 (OCR 2.0):</strong> 處理包含圖表、表格和手寫文字的複雜 PDF。傳統 OCR 只能識別文字，多模態模型能理解圖表背後的趨勢。</li>
+                        <li><strong>多模態分析:</strong> 同時上傳一段產品影片與用戶評價，讓 AI 生成一份聲畫同步的分析報告。</li>
+                    </ul>
+
+                    <h3>推薦工具：v0.dev</h3>
+                    <p>v0.dev 由 Vercel 推出，是多模態 AI 在前端開發的最佳實作。你可以描述需求，或者直接上傳你喜歡的網頁截圖，它會為你生成高品質的 React 組件。它是學習「如何與視覺 AI
+                        溝通」的絕佳平台。</p>
+
+                    <a href="https://v0.dev" target="_blank" class="category-link">立即體驗 v0.dev →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Prompt Engineering -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">8. 提示工程 (Prompt Engineering)</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">與 AI 模型溝通的藝術，從簡單指令到複雜框架。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>提示工程的層次</h3>
+                    <p>提示工程不僅僅是寫一句話。它分為四個核心階段：<br>
+                        1. <strong>簡單指令 (Direct Prompting)</strong>: 最基礎的問法。<br>
+                        2. <strong>少樣本學習 (Few-shot Learning)</strong>: 給模型提供 3-5 個正確範例，讓其模仿特定格式與語氣。<br>
+                        3. <strong>思維鏈 (Chain-of-Thought)</strong>: 強制要求模型「先思考再回答」，對於邏輯運算或數學題至關重要。<br>
+                        4. <strong>框架化提示 (Framework-based)</strong>: 如 PASEC、RTF 等結構化框架。</p>
+
+                    <h3>PASEC 框架詳解</h3>
+                    <p>這是目前在學術與專業開發中最推薦的框架：<br>
+                        - <strong>Purpose (目的)</strong>: 清楚告訴 AI 任務目標。<br>
+                        - <strong>Audience (受眾)</strong>: 目標群體是誰？決定了語調。<br>
+                        - <strong>Style (風格)</strong>: 幽默？專業？簡練？<br>
+                        - <strong>Examples (範例)</strong>: 提供優秀樣本。<br>
+                        - <strong>Constraints (限制)</strong>: 長度、格式、禁用詞。</p>
+
+                    <h3>進階技巧：XML 渲染與標籤化</h3>
+                    <p>在使用 Claude 時，將 Prompt 包裹在 XML 標籤中（例如
+                        <code>&lt;rules&gt;...&lt;/rules&gt;</code>）能顯著提升模型的指令遵循率。這是因為大模型在訓練中接觸了大量結構化數據，XML
+                        標籤能幫助模型明確區分指令與上下文數據。
+                    </p>
+
+                    <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+                        target="_blank" class="category-link">Claude 官方提示工程指南 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. RAG -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">9. 檢索增強生成 (RAG)</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">解決 AI 幻覺，讓模型讀取你的私人數據庫。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是 RAG？</h3>
+                    <p>RAG (Retrieval-Augmented Generation) 解決了兩個大問題：1. AI 知識的滯後性；2. AI
+                        對特定領域知識的缺乏。它像是一個「帶著參考書考試」的過程。系統先在你的文檔中找到正確段落，然後交給 AI 總結輸出答案。</p>
+
+                    <h3>四大核心組件</h3>
+                    <ol>
+                        <li><strong>Data Ingestion (載入與清洗):</strong> 將 PDF, Markdown 或 SQL 原數據提取出來。</li>
+                        <li><strong>Vectorization (向量化):</strong> 使用 Embedding 模型將文字轉換為一串數字向量。</li>
+                        <li><strong>Vector Database (向量資料庫):</strong> 存儲這些向量，支持內容相似度搜索（如 ChromaDB, Pinecone, pgvector）。
+                        </li>
+                        <li><strong>Ranking & Generation (排序與生成):</strong> 找到最相關的資料後，傳給 LLM 進行最終回答。</li>
+                    </ol>
+
+                    <h3>深度優化：Naive RAG vs. Advanced RAG</h3>
+                    <p>簡單的 RAG 往往效果不佳。進階做法包括：<br>
+                        - <strong>Parent-Child Retrieval</strong>：小段落搜索，大段落召回。<br>
+                        - <strong>Multi-Query</strong>：將用戶的一個問題轉換為 3 個相似問題同時搜索，提高覆蓋率。<br>
+                        - <strong>Re-ranking</strong>：引入二階段排序模型，從搜索出的 20 條中選出最精確的 5 條。</p>
+
+                    <a href="https://www.llamaindex.ai/" target="_blank" class="category-link">查看 LlamaIndex 全球最強 RAG 框架
+                        →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. AI Tool Stacking -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">4. AI 工具堆疊 (AI Tool Stacking)</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">整合多個 AI 工具建立跨平台的自訂自動化工作流，發揮 1+1>2 的威力。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是工具堆疊？</h3>
+                    <p>單一 AI 工具往往有其極限。工具堆疊 (Stacking) 是指將多個具備不同強項的 AI 服務串接起來。例如：用 <strong>Claude</strong> 處理長文本邏輯 -> 用
+                        <strong>Midjourney</strong> 生成高品質配圖 -> 用 <strong>ElevenLabs</strong> 進行配音 -> 最後在
+                        <strong>Canva</strong> 進行排版。</p>
+                    <ul>
+                        <li><strong>核心技術連結:</strong> 利用 <strong>Make.com</strong> 或 <strong>Zapier</strong> 作為膠水層，可以將
+                            ChatGPT 的 API 輸出的 JSON 資料自動填入 Google Sheets，再觸發後續的 AI 處理流程。</li>
+                        <li><strong>優勢：</strong> 每一環節都使用頂級模型，避免單一模型的短處（如 GPT 的圖感較弱或 Midjourney 無法處理複雜邏輯）。</li>
+                        <li><strong>實戰範例：</strong> 利用 Notion API 導出內容，通過 AI 節點進行摘要，再自動推送到 Slack 頻道並使用 AI 生成摘要圖片。</li>
+                    </ul>
+                    <a href="https://www.make.com/" target="_blank" class="category-link">到 Make.com 學習工作流自動化 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. AI Video Generation -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">5. AI 影片內容生成</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">從腳本創作到畫面生成、配音與剪輯的 AI 全流程。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>影片創作的降維打擊</h3>
+                    <p>傳統影片製作需要攝製組、燈光與後期。AI 影片生成技術 (如 Runway Gen-3 Alpha, Luma Dream Machine)
+                        讓個人創作能產出影院級場景，極大地降低了創作門檻與成本。</p>
+                    <ul>
+                        <li><strong>Runway ML / Pika:</strong> 專注於將文字或靜態圖轉換為高動態影像。你可以使用「動態權重」來控制鏡頭的運鏡速度。</li>
+                        <li><strong>HeyGen / D-ID:</strong> 專注於數字人 (Avatar) 說話影片，具備精確的對嘴效果，非常適合製作虛擬講師教學視頻。</li>
+                        <li><strong>Sora (OpenAI):</strong> 展示了物理模擬級別的影片連貫性，雖然尚未完全開放，但代表了未來的方向。</li>
+                        <li><strong>整合利器:</strong> 剪映 (CapCut) 集成了大量的 AI 自動剪輯、自動字幕與智能去背功能，是最後整合的實力助手。</li>
+                    </ul>
+                    <a href="https://runwayml.com/" target="_blank" class="category-link">進入 Runway 探索影片生成限界 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Fine-Tuning and AI Assistants -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">6. 微調與 AI 助手 (Fine-Tuning)</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">為特定領域打造專屬大模型，讓 AI 理解你的行業知識與獨特語氣。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>微調是什麼？</h3>
+                    <p>如果說 RAG 是讓 AI 考試時看書，微調 (Fine-tuning) 就是讓 AI 透過訓練將知識與風格刻進「腦海」裡。這通常需要準備一組專屬的
+                        Dataset，讓模型調整權重以符合特定的語境。</p>
+                    <ul>
+                        <li><strong>LoRA (Low-Rank Adaptation):</strong> 現代最流行的輕量化微調技術。你不需要訓練整個模型，只需要訓練極少量的額外參數，就能讓
+                            Llama 3 或 Mistral 學會你的說話方式。</li>
+                        <li><strong>Hugging Face Ecosystem:</strong> 利用 <code>transformers</code> 庫和 <code>PEFT</code>
+                            庫，開發者可以輕鬆地在本地 GPU 或是雲端平台進行模型微調。</li>
+                        <li><strong>應用方案:</strong> 客服機器人微調（學會品牌語調）、代碼生成模型微調（學會私有庫語義）。</li>
+                    </ul>
+                    <a href="https://huggingface.co/docs/peft/index" target="_blank" class="category-link">查看 PEFT
+                        微調技術文檔 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Voice AI and Avatars -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">7. 語音 AI 與虛擬化身</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">克隆你的聲音與形象，實現 24/7 的數字人交互與內容創作。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>語音克隆與情感合成</h3>
+                    <p>利用 <strong>ElevenLabs</strong> 或開源的 <strong>GPT-SoVITS</strong>，你只需要 1
+                        分鐘的錄音片段，就能生成一個和原主幾乎無法區分的數字聲音。這不僅是文字轉語音，它能保留說話者的情感脈絡與停頓策略。</p>
+                    <ul>
+                        <li><strong>情感微調:</strong> 調整 AI 聲音的憤怒、快樂或悲傷程度。</li>
+                        <li><strong>形象對其:</strong> 結合 <strong>HeyGen</strong>，你可以讓你的虛擬化身以你的聲音說超過 40
+                            種語言，並保持口型同步，這是跨國營銷的神器。</li>
+                    </ul>
+                    <a href="https://elevenlabs.io/" target="_blank" class="category-link">到 ElevenLabs 克隆你的聲音 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. AGENTS.md -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">10. AGENTS.md：AI 開發新標準</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">為 AI 時代定制的領域驅動設計 (DDD) 規範。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是 AGENTS.md？</h3>
+                    <p>在過去，我們為人類寫 <code>README.md</code>；在 AI 時代，我們需要為 AI 代理寫 <code>AGENTS.md</code>。這是一個標準化的項目規約，旨在讓 AI
+                        代理在幾秒鐘內理解整個項目的架構、規範與意圖。</p>
+
+                    <h3>核心規範五大部分</h3>
+                    <ul>
+                        <li><strong>Project Intent:</strong> 項目是做什麼的？核心業務場景是什麼？</li>
+                        <li><strong>Tech Stack Constraints:</strong> 規定的編程語言、框架版本、代碼風格。</li>
+                        <li><strong>Domain Logic:</strong> 核心領域模型與關鍵業務流程。</li>
+                        <li><strong>Tool Definitions:</strong> AI 可以調取的內部 API、腳本或工具路徑。</li>
+                        <li><strong>Security & Boundaries:</strong> 哪些文件是 AI 絕對不能修改的敏感區域。</li>
+                    </ul>
+
+                    <h3>實戰效益</h3>
+                    <p>導入 <code>AGENTS.md</code> 後，當你開啟一個新的 Claude Code 或 Cursor 窗口，AI
+                        不需要你一遍又一遍解釋項目需求。它會主動讀取此文件，精確地在規範內編寫代碼，錯誤率降低了約 70% 以上。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. AI Coding Agents -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">11. AI 編碼工具代理模式</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">掌握 Claude Code 與 Gemini CLI 的代理級開發流程，實現自主編寫與測試。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>從「插件」到「開發夥伴」</h3>
+                    <p>與普通的代碼補全不同，代理模式下的 AI（如 Claude Code CLI）具備自主執行終端命令的能力。這意味著它能完成一個閉環任務，而不只是寫代碼。</p>
+                    <ul>
+                        <li><strong>自主環境感知:</strong> AI 能自動運行 <code>npm test</code> 或
+                            <code>pytest</code>，如果測試失敗，它會讀取報錯日誌，主動修正代碼並再次運行，直到測試通過。</li>
+                        <li><strong>全自動部署整合:</strong> 可以串接 <code>gh pr create</code> 命令，讓 AI 在修復 Bug 後自動提交 Pull Request
+                            並撰寫更新日誌。</li>
+                        <li><strong>跨文件重構:</strong> 代理可以理解大型項目的上下文，同時修改 10 個以上的文件以確保全局型別的一致性。</li>
+                    </ul>
+                    <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code" target="_blank"
+                        class="category-link">掌握 Claude Code 官方代理指南 →</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>學習中心 | AI 開發與工程專頁</p>
+        <p>持續更新中 · 2026</p>
+    </footer>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

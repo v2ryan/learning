@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料庫與後端 | 學習中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        .priority-high {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-medium {
+            background: rgba(254, 225, 64, 0.1);
+            color: #fee140;
+            border: 1px solid rgba(254, 225, 64, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            background: rgba(67, 233, 123, 0.1);
+            color: #43e97b;
+            border: 1px solid rgba(67, 233, 123, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .topic-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LEARNING HUB</a>
+            <a href="index.html" class="back-link">← 返主頁</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge"
+            style="display:inline-block; padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+            💾 Database & Backend</div>
+        <h1 class="page-title">資料庫與後端</h1>
+        <p class="page-desc">深度解析 PostgreSQL。學習如何利用向量擴展為 AI 應用構建強大的數據基座。</p>
+    </header>
+
+    <main class="main-content">
+        <!-- 44. Postgres -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">44. PostgreSQL 資料庫進階與 AI 實戰</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">超越基礎 SQL：掌握 RAG 時代的核心——向量搜索與高性能查詢。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>為什麼 PostgreSQL 是 AI 開發者的終極選擇？</h3>
+                    <p>在 AI 爆發之前，Postgres 就已是業界標準。但隨著 <code>pgvector</code> 插件的出現，它直接取代了許多昂貴且難以維護的專用向量資料庫。它讓你能在同一個 ACID
+                        保障的環境下，同時處理傳統關係型數據與最新的 AI 向量數據。</p>
+
+                    <h3>核心學習模塊</h3>
+                    <ul>
+                        <li><strong>1. 基礎 SQL 與設計模式:</strong> 理解第三範式、掌握多表 JOIN 優化。在 AI 應用中，你往往需要關聯用戶權限表與向量內容表。</li>
+                        <li><strong>2. pgvector 深度使用:</strong>
+                            <ul>
+                                <li><strong>Vector 數據類型:</strong> 學習如何定義 <code>vector(1536)</code> 欄位來儲存 OpenAI 或 Gemini
+                                    的 Embedding。</li>
+                                <li><strong>索引算法:</strong> 區分 IVFFlat 與 HNSW。後者在處理百萬級數據時具備極高的查詢效率。</li>
+                                <li><strong>距離函數:</strong> 掌握餘弦相似度 (Cosine Distance) 與歐幾里得距離的應用場景。</li>
+                            </ul>
+                        </li>
+                        <li><strong>3. 存儲過程與觸發器:</strong> 讓資料庫在數據變動時自動調用 AI API 更新 Embedding。</li>
+                    </ul>
+
+                    <h3>實戰案例：具備權限控制的知識庫</h3>
+                    <p>這是一個 RAG 的痛點。如果你將數據存放在專用向量庫，很難處理「誰能看哪份文件」的邏輯。使用 Postgres，你可以寫出類似這樣的查詢：<br>
+                        這種將業務邏輯與向量搜索完美融合的能力，是 AI 工程師必須具備的硬核技能。
+                    </p>
+                    <a href="https://github.com/pgvector/pgvector" target="_blank" class="category-link">查看 pgvector
+                        官方倉庫 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Firebase -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">49. Firebase 作為後端解決方案：優缺點深度剖析</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">探討 Google 旗艦級 BaaS 服務在現代開發中的實際應用價值與侷限性。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是 Firebase？</h3>
+                    <p>Firebase 是 Google 提供的「後端即服務」(Backend as a Service,
+                        BaaS)。它的核心理念是讓開發者專注於前端用戶體驗，而將資料庫、身分驗證、文件存儲和伺服器邏輯等繁瑣的後端基礎設施交由 Google 託管。</p>
+
+                    <div class="step-box">
+                        <h3>✅ 強大優勢 (The Pros)</h3>
+                        <ul>
+                            <li><strong>1. 極速開發與上線 (Time to Market):</strong> Firebase 提供了開箱即用的 API。你不需要編寫 API
+                                路由，也不需要配置伺服器，幾行代碼就能實現用戶登錄和數據讀寫。這對於 Startup 或個人開發者來說是毀滅性的效率工具。</li>
+                            <li><strong>2. 即時數據同步 (Real-time Database / Firestore):</strong> 這是 Firebase 的拿手好戲。它使用
+                                WebSocket 技術，當資料庫發生變動時，所有連接的客戶端會「秒速」收到更新。非常適合聊天室、多人協作工具或實時儀表板。</li>
+                            <li><strong>3. 完善的生態整合:</strong> 包含了 Firebase Auth (身分驗證)、Cloud Functions (Serverless
+                                邏輯)、Firebase Hosting (靜態部署) 和 Cloud Storage。這些服務之間深度聯動，免去了自行集成的各種 Bug。</li>
+                            <li><strong>4. 自動化擴展:</strong> 作為無伺服器 (Serverless) 架構，它會根據流量自動縮放。你不需要擔心雙 11 流量激增導致服務器崩潰。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box"
+                        style="background: rgba(245, 87, 108, 0.1); border-color: rgba(245, 87, 108, 0.2);">
+                        <h3>❌ 潛在侷限 (The Cons)</h3>
+                        <ul>
+                            <li><strong>1. 成本陷阱 (Cost at Scale):</strong> Firebase
+                                的計費模型非常細碎（按讀、寫、刪除次數計費）。雖然初期免費額度很大，但一旦你的應用架構設計不當（如：大量的循環讀寫），費用會呈幾何倍數增長，且難以預測。</li>
+                            <li><strong>2. 複雜查詢能力較弱:</strong> 作為 NoSQL 資料庫，Firestore 不支持豐富的 SQL 查詢。比如，你很難執行複雜的模糊搜索、多重
+                                JOIN 或聚合運算 (Aggregate)。這往往需要你額外購買 Algolia 或在代碼層面做大量處理。</li>
+                            <li><strong>3. 廠商鎖定 (Vendor Lock-in):</strong> 你的代碼會深度依賴 Firebase 的 SDK。如果你想從 Firebase 遷移到
+                                AWS 或自建的 Postgres，幾乎需要重新編寫整個後端邏輯。數據遷移也相當痛苦。</li>
+                            <li><strong>4. 伺服器地理位置限制:</strong> Firebase 的某些進階功能（如 Cloud
+                                Functions）在特定區域的冷啟動延遲可能較大，且對於有數據在地化法規要求的項目，Google Cloud 的合規性需額外審慎。</li>
+                        </ul>
+                    </div>
+
+                    <p>如果你正在建立一個 <strong>MVP</strong>、需要 <strong>即時互動</strong> 或項目 <strong>邏輯較簡單</strong>，Firebase
+                        是神級選擇。但如果你預期未來有極大的 <strong>複雜數據關聯</strong>，或者對 <strong>成本預算</strong> 極度敏感，選擇 PostgreSQL +
+                        Next.js 可能才是長久之計。</p>
+                    <a href="https://firebase.google.com/" target="_blank" class="category-link">進入 Firebase 官方平台 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>學習中心 | 資料庫與後端專頁</p>
+        <p>持續更新中 · 2026</p>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

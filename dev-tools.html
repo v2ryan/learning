@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開發工具與平台 | 學習中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        .priority-high {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-medium {
+            background: rgba(254, 225, 64, 0.1);
+            color: #fee140;
+            border: 1px solid rgba(254, 225, 64, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            background: rgba(67, 233, 123, 0.1);
+            color: #43e97b;
+            border: 1px solid rgba(67, 233, 123, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .topic-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LEARNING HUB</a>
+            <a href="index.html" class="back-link">← 返主頁</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge"
+            style="display:inline-block; padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+            💻 Dev Tools</div>
+        <h1 class="page-title">開發工具與平台</h1>
+        <p class="page-desc">深度解析 10 個核心項目。從網頁開發的最佳實踐到 SaaS 架構設計與現代終端工具。</p>
+    </header>
+
+    <main class="main-content">
+        <!-- 34. Web Dev Roadmap -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">34. 網頁開發路線圖 (Web Dev Roadmap)</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">在 AI 時代，如何高效掌握全端開發技術棧？</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>AI 時代的技能重組</h3>
+                    <p>傳統的網頁開發流程是從 HTML/CSS 開始，慢慢學習 JavaScript，然後是框架。在 AI
+                        時代，我們的學習路徑應該更加「以成果為導向」。雖然你不必手寫每一行代碼，但你必須理解底層邏輯，否則你將無法對 AI 的內容進行 Debug。</p>
+
+                    <h3>現代全端路線圖建議</h3>
+                    <ol>
+                        <li><strong>基礎建設 (The Essentials):</strong>
+                            <ul>
+                                <li>HTML5 語義化標籤（SEO 關鍵）。</li>
+                                <li>Tailwind CSS（目前 AI 對 Tailwind 的代碼生成質量最高）。</li>
+                                <li>TypeScript（強型別是大型 AI 協作項目的保險絲）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>前端框架:</strong> 優先學習 <strong>Next.js</strong>。它的 App Router 模式與部署到 Vercel 的原生支持，使其成為
+                            AI 開發者的首選。</li>
+                        <li><strong>後端與數據:</strong> 學習使用 Supabase 或 Prisma。相比傳統開發，這些工具提供了極強的「代碼聯想」與「自動文檔」能力，極大減少了開發心智負擔。
+                        </li>
+                    </ol>
+
+                    <h3>推薦資源：roadmap.sh</h3>
+                    <p>這是全球最權威的開發者學習路線圖集合。你可以找到 Frontend, Backend, DevOps 甚至特定的 React 路線圖。結合 AI
+                        工具（如本代理），你可以讓它針對路線圖中的每一個節點為你生成專屬的練習作業。</p>
+
+                    <a href="https://roadmap.sh/" target="_blank" class="category-link">查看完整路線圖 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 35. SaaS Development -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">35. SaaS 開發實戰 (SaaS Development)</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">如何從零到一構建出可商用、具備支付能力的雲端軟體？</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是 SaaS (軟體即服務)？</h3>
+                    <p>SaaS 意味著用戶通過訂閱 (Subscription) 使用你的產品。構建一個 SaaS 比構建一個簡單網頁難得多，因為它涉及到身分驗證、訂閱方案管理、支付接口、多租戶隔離等核心商業邏輯。
+                    </p>
+
+                    <h3>SaaS 開發四大支柱</h3>
+                    <ul>
+                        <li><strong>1. Auth (身分驗證):</strong> 不要自己寫登錄註冊系統！使用 <strong>Clerk</strong> 或
+                            <strong>Kinde</strong>。它們提供了現成的組件，支持 Google 登錄、Magic Link 等。
+                        </li>
+                        <li><strong>2. Database (資料庫):</strong> 推薦 <strong>Supabase (PostgreSQL)</strong>。它的行列安全 (RLS)
+                            政策能幫你極其簡單地實現「用戶只能看到自己的數據」。</li>
+                        <li><strong>3. Payments (金流):</strong> 全球首選 <strong>Stripe</strong>。掌握 Stripe Checkout 和 Webhook
+                            處理是 SaaS 開發的核心。</li>
+                        <li><strong>4. Deployment (部署):</strong> <strong>Vercel</strong>。它提供的 Preview Deployment 和 Edge
+                            Function 支持讓你的應用能秒速上線並在全球加速。</li>
+                    </ul>
+
+                    <h3>實戰案例：AI 圖像處理 SaaS</h3>
+                    <p>流程：1. 用戶上傳圖片。2. 前端 (Next.js) 發送請求到邊緣函數。3. 邊緣函數調用 Gemini Vision API 處理圖片。4. 結果保存至 Supabase
+                        Storage。5. 透過 Stripe 扣除用戶的一個額度點數。這就是一個典型的現代 SaaS 閉環。</p>
+
+                    <a href="https://vercel.com/templates?framework=next.js" target="_blank" class="category-link">瀏覽優秀
+                        SaaS 模板 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 38. Wave Terminal -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">38. Wave Terminal 開源終端機</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">顛覆傳統的開發體驗：支持 Markdown 與 Web 渲染的下一代終端機。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>為什麼我們需要 Wave Terminal？</h3>
+                    <p>傳統的終端機（如 CMD, PowerShell, iTerm2）本質上只是字元流。它無法直接顯示圖表、無法很好的預覽網頁、也無法方便地編輯大型文件。Wave Terminal 採用了 Web
+                        技術重新構建了終端內核。</p>
+
+                    <h3>震撼功能解析</h3>
+                    <ul>
+                        <li><strong>富文本顯示:</strong> 直接在終端裡渲染 Markdown。這這意味著 AI 返回的優美說明代碼不再是純文字。</li>
+                        <li><strong>Web Widget:</strong> 你可以在終端的一個標籤頁裡開啟一個小型的瀏覽器窗口，邊寫代碼邊查看官方文檔，或者實時預覽你的 Localhost 網頁。
+                        </li>
+                        <li><strong>持續性會話 (Persistent Sessions):</strong> 即使你關閉了電腦重啟，Wave 也能恢復你之前的終端狀態、路徑和正在運行的進程。</li>
+                        <li><strong>AI 整合:</strong> 內置了對 LLM 的支持，你可以直接在終端行裡問 AI：「如何遞歸刪除所有 node_modules
+                            文件？」它會直接給你命令並一鍵執行。</li>
+                    </ul>
+
+                    <a href="https://www.waveterm.dev/" target="_blank" class="category-link">下載 Wave Terminal →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 40. Lovable.dev -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">40. Lovable + n8n + Airtable</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">利用「無代碼數據」與「AI 代碼生成」構建重量級應用。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>未來的開發模式：Low-Code Data + Full-Code UI</h3>
+                    <p>這是一個非常強大的開發組合。Airtable 負責讓非技術人員也能輕鬆管理數據庫。n8n 負責處理複雜的後端業務邏輯（如發郵件、調用 API）。而 Lovable.dev
+                        或本代理則負責生成美觀且具備完全控制權的前端代碼。</p>
+
+                    <h3>為什麼這個組合無懈可擊？</h3>
+                    <ul>
+                        <li><strong>數據透明度:</strong> 利用 Airtable，你可以像操作 Excel 一樣操作你的 SaaS 數據庫。</li>
+                        <li><strong>極速迭代:</strong> 想要修改一個自動化流程？在 n8n 畫個線就行。想要修改 UI？跟 AI 說句話就行。</li>
+                        <li><strong>低維護成本:</strong> 大量邏輯被託管在低代碼平台，減少了服務器的維護難度。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 36. Vibe Kanban (BloopAI) -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">36. Vibe Kanban (BloopAI)</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">AI 增強的看板工具，重新定義任務管理與團隊協作，讓工作流「具備語義」。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>高效看板管理與語義分析</h3>
+                    <p>Vibe Kanban 結合了 BloopAI 的語義搜索與分析能力。它不僅能幫你記錄任務，還能自動分析任務之間的潛在衝突與依賴關係。當你移動一個「修復登錄 Bug」卡片時，AI
+                        會主動提示相關的代碼路徑可能受到影響。</p>
+                    <ul>
+                        <li><strong>智能標籤:</strong> 根據任務描述自動生成精確的分類標籤。</li>
+                        <li><strong>語義搜索:</strong> 即使你不記得具體標題，輸入「關於支付的問題」也能精確找到對應卡片。</li>
+                    </ul>
+                    <a href="https://bloop.ai/" target="_blank" class="category-link">查看 BloopAI 核心技術 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 37. Makerworld 3D -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">37. Makerworld 3D 模型平台</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">探索與分享 3D 打印模型，連結創意與現實的橋樑。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>3D 創意社群</h3>
+                    <p>Makerworld 是目前發展最快的 3D 模型分享平台。它深度整合了 Bambu Lab
+                        的硬件生態，支持「一鍵打印」。你可以在這裡找到從精緻的模型玩具到實用的家居小工具，並學習如何進行基本的 3D 建模。 </p>
+                    <a href="https://makerworld.com/" target="_blank" class="category-link">進入 Makerworld →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 39. Edge TTS -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">39. Edge TTS 高品質語音合成</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">微軟出品的最強免費語音合成工具，支持多種自然口音與流暢表達。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>免費且流暢的雲端語音方案</h3>
+                    <p>Edge TTS 是一個利用 Microsoft Edge 瀏覽器內置語音引擎的開源封裝工具。它生成的聲音極具情感，且支持包括廣東話 (zh-HK / HiuGaai,
+                        HiMiu)、普通話及英文在內的多種自然人聲音色。對於需要大量配音但預算有限的內容創作者（如抖音、YouTube 創作者）來說，這是目前市場上的最優解。</p>
+                    <ul>
+                        <li><strong>SSML 支持:</strong> 精確控制語音的語速、音調與停頓。</li>
+                        <li><strong>離線導出:</strong> 可直接生成高品質 MP3/WAV 文件。</li>
+                    </ul>
+                    <a href="https://github.com/rany2/edge-tts" target="_blank" class="category-link">到 GitHub 查看
+                        edge-tts 項目 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 41. Lifeforge -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">41. Lifeforge 自架生活管理系統</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">建立開源、私密且強大的個人生活數字孿生系統，掌握個人數據主導權。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>數據主權與自託管的魅力</h3>
+                    <p>Lifeforge 是一個開源項目，允許你在自己的本地伺服器或 NAS 上託管個人筆記、目標管理和財務追蹤。它強調隱私保護，所有數據均加密存儲，不會上傳到 AI
+                        公司的伺服器。這對於重視數字資產隱私的開發者來說是完美方案。</p>
+                    <div class="step-box">
+                        <strong>快速啟動：</strong><br>
+                        使用 Docker 部署：<code>docker run -p 3000:3000 lifeforge/app</code>，幾分鐘內即可開啟你的私密生活管理。
+                    </div>
+                    <a href="https://github.com/topics/personal-management" target="_blank"
+                        class="category-link">探索更多個人管理開源項目 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 42. PDF to TXT -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">42. 圖片型 PDF 轉 TXT 工具 (OCR)</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">使用先進 OCR 技術高效提取掃描件中的文字，為 AI 訓練提供乾淨語料。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>RAG 數據清洗的高速公路</h3>
+                    <p>在構建個人知識庫 (RAG) 時，處理掃描版 PDF 是最困難的環節。本工具整合了 <strong>Tesseract</strong> 與
+                        <strong>PaddleOCR</strong>，能精確識別複雜排版、表格甚至手寫註記，並將其轉換為 Markdown 或純文本格式，確保 AI 能理解真實意圖而不被亂碼干擾。</p>
+                    <a href="https://github.com/tesseract-ocr/tesseract" target="_blank" class="category-link">查看
+                        Tesseract OCR 官方文檔 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 43. YouTube Link Grabber -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">43. YouTube Link Grabber</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">Chrome 擴充功能：一鍵收集並導出影片連結與元數據，快速建立個人學習庫。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>影音資料收集利器</h3>
+                    <p>當你在 YouTube 上刷到一堆優質教程時，手動複製連結太慢了。這款擴充功能（基於 JavaScript 開發）可以幫你一鍵抓取當前頁面或整個播放列表的所有連結、標題與播放時間，並支持
+                        CSV/JSON 導出。這是構建「AI 影片導航系統」的最快路徑。</p>
+                    <a href="https://chrome.google.com/webstore" target="_blank" class="category-link">到 Chrome 商店開發類似插件
+                        →</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>學習中心 | 開發工具與平台專頁</p>
+        <p>持續更新中 · 2026</p>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

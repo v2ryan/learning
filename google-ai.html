@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI 生態 | 學習中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        .priority-high {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-medium {
+            background: rgba(254, 225, 64, 0.1);
+            color: #fee140;
+            border: 1px solid rgba(254, 225, 64, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            background: rgba(67, 233, 123, 0.1);
+            color: #43e97b;
+            border: 1px solid rgba(67, 233, 123, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .topic-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="stars" id="stars"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LEARNING HUB</a>
+            <a href="index.html" class="back-link">← 返主頁</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="badge"
+            style="display:inline-block; padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+            🌐 Google AI Ecosystem</div>
+        <h1 class="page-title">Google AI 生態</h1>
+        <p class="page-desc">深度解析 13 個核心項目。利用 Gemini 的百萬級上下文與 Google 獨有的個人化學習工具提升效率。</p>
+    </header>
+
+    <main class="main-content">
+        <!-- 30. Gemini Prompt Design -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">30. Gemini 提示設計全攻略</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">掌握專為 Google Gemini 優化的結構化提示設計，解決長文本處理中的精度問題。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>Gemini 的獨特性：200 萬 Token 的魔法</h3>
+                    <p>Google 的 Gemini 1.5 系列擁有業界最強的上下文長度（Context Window）。這意味著你可以將 20 本大部頭著作、或者數小時的影片、甚至整個代碼庫一次性「喂」給
+                        AI。然而，窗口越大，「大海撈針」(Needle In A Haystack) 的能力和精度就越考驗你的提示技巧。</p>
+
+                    <h3>提示設計的三大支柱</h3>
+                    <ul>
+                        <li><strong>1. 結構化分組 (Structural Grouping):</strong> 在處理長文本時，使用 Markdown 標題或 XML
+                            標籤來明確標識不同類型的資料。例如：<code># Document A</code>, <code># Rules</code>。這能幫助模型在長序列中精確定位。</li>
+                        <li><strong>2. 零樣本思維鏈 (Zero-shot CoT):</strong> 簡單的一句話「Let's think step by step」在 Gemini
+                            上有顯著效果，特別是在分析複雜報表數據時。</li>
+                        <li><strong>3. 要求模型引用 (Citations):</strong> 這是減少幻覺的關鍵。你可以加一句：「在回答每個問題時，請明確指出源文件中對應的頁碼或段落內容。」
+                        </li>
+                    </ul>
+
+                    <h3>實戰秘笈：如何處理 10 小時影片？</h3>
+                    <p>當你上傳影片時，不要問開放性問題。更好的問法是：「我正在尋找影片中關於『用戶測試反饋』的所有片段。請列出具體的時間戳
+                        (Timestamp)，並摘要每位用戶的主要痛點。」這種「以任務為導向」的提示詞能讓 Gemini 的高性能展現得淋漓盡致。</p>
+
+                    <a href="https://aistudio.google.com/" target="_blank" class="category-link">進入 Google AI Studio 實戰
+                        →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 26. Learn Your Way -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">26. Google Learn Your Way</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">重新定義「學習」：根據你的大腦偏好，自動生成 5 種學習格式。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>AI 時代的差異化學習</h3>
+                    <p>每個人的學習習慣都不同。有人喜歡看文字，有人喜歡聽音頻。Google Learn Your Way 本質上是利用 Gemini 的跨模態轉換力，將一份無聊的白皮書（或任何
+                        PDF/連結）自動重組為最適合你的形式。</p>
+
+                    <h3>五大個人化形式深度解析</h3>
+                    <ul>
+                        <li><strong>1. 對話式音訊 (Conversational Audio):</strong> 最酷的功能。它能生成兩個人（像 Podcaster
+                            一樣）在討論這份資料的錄音，你可以邊開車邊聽懂艱深的量子力學論文。</li>
+                        <li><strong>2. 互動式簡報 (Interactive Slides):</strong> 將文字轉化為視覺化的 PPT 風格頁面，適合快速掃描重點。</li>
+                        <li><strong>3. 心智圖 (Mindmaps):</strong> 梳理知識架構，建立邏輯鏈條，讓你一目了然整本書的脈絡。</li>
+                        <li><strong>4. 個人化筆記:</strong> 去除冗餘信息，只保留根據你的具體需求（如：為了考證券分析師）定制的純淨版乾貨。</li>
+                        <li><strong>5. 互動式文字:</strong> 加入 Q&A 環節，讓你一邊閱讀一邊回答 AI 的提問，鞏固記憶。</li>
+                    </ul>
+
+                    <h3>為什麼這是效率革命？</h3>
+                    <p>過去你需要花 5 小時讀完的資料，現在可以先聽 20 分鐘的音頻總結，再看 5 分鐘的心智圖。這種「多維度轟炸」大腦的方式，能讓你的學習速度提升 3 倍以上。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 25. Gemini API Key -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">25. 免費取得 Gemini API 金鑰</h2>
+                        <span class="priority-badge priority-high">High</span>
+                    </div>
+                    <p class="topic-text">獲取開發者必備的通行證，開始構建你自己的 Google AI 應用。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>開發者的福音：免費的高性能 API</h3>
+                    <p>目前 Google 對開發者非常康慨，在 AI Studio 中提供了大量的免費額度 (Free Tier)，這對於學生、個人開發者或初創團隊來說是極佳的資源。你可以免費調用 Gemini
+                        1.5 Pro 和 Flash 模型進行測試與部署。</p>
+
+                    <h3>5 分鐘快速獲取指南</h3>
+                    <div class="step-box">
+                        <strong>操作流程：</strong><br>
+                        1. 訪問 <strong>Google AI Studio</strong> (aistudio.google.com)。<br>
+                        2. 使用 Google 帳號登入。<br>
+                        3. 點擊側邊欄的 <strong>"Get API Key"</strong> 按鈕。<br>
+                        4. 點擊 "Create API Key in new project"。<br>
+                        5. 複製並安全存儲你的 API Key。
+                    </div>
+
+                    <h3>API 權限與限制</h3>
+                    <p>請注意：免費額度的數據可能會被 Google 用於模型訓練，如果你正在處理極度敏感的公司機密，建議升級到付費方案 (Pay-As-You-Go)
+                        以獲得隱私保障。同時，免費版有每分鐘調用次數的限制 (Rate Limits)，開發時需做好重試邏輯。</p>
+
+                    <a href="https://aistudio.google.com/" target="_blank" class="category-link">前往官方獲取 API →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 22: Multimodal Live API -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">22. Gemini Voice AI Building</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">利用 Multimodal Live API 構建具備視覺能力的實時語音助手。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>什麼是實時多模態 API？</h3>
+                    <p>這不僅僅是語音對對話。這個 API 支持低延遲的雙向流式傳輸，AI 可以同時「聽」你的聲音、「看」你的攝像頭畫面、並「說」出回答。這是目前構建 AI 硬件或高級網頁助手的巔峰技術。</p>
+
+                    <h3>應用實例：AI 健身教練</h3>
+                    <p>開發一個移動端 App，用戶架起手機運動，AI 通過視訊流實時觀察用戶的深蹲姿勢，並通過低延遲語音即時喊出：「腰部再降低一點！」、「加油！還有三個！」。這種等級的交互在 Gemini 1.5
+                        系列出現之前是無法實現的。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 31. Gemini PASEC Prompt 框架 -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">31. Gemini PASEC Prompt 框架</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">專為 Google AI 優化的五維度提示詞設計指南，讓生成結果更精確。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>PASEC 深度拆解</h3>
+                    <p>PASEC 是一個標準化流程，確保你不會忘記給 AI 任何關鍵上下文。這對於 Gemini 1.5 系列尤為重要，因為它擁有巨大的處理能力，精確的定義能有效防止「大海撈針」時的漂移。</p>
+                    <ul>
+                        <li><strong>Purpose (目的):</strong> 不要只說「寫一篇文章」。要說「寫一篇旨在說服投資人參與 A 輪融資的行業分析報告」。</li>
+                        <li><strong>Audience (受眾):</strong> 給 5 歲小孩看的和給 CEO 看的報告完全不同。指定受眾背景有助於 model 調整專業術語的使用頻率。</li>
+                        <li><strong>Style (風格):</strong> 包含語氣（幽默、嚴謹）、修辭偏好、甚至特定的口頭禪或是 Markdown 層級要求。</li>
+                        <li><strong>Examples (範例):</strong> 「少樣本」提示是最強大的。給 AI 看一個你認為 100 分的答案，它就能模仿出來並在長文本中保持一致。</li>
+                        <li><strong>Constraints (限制):</strong> 關鍵詞頻率、字數限制、輸出格式 (JSON/Markdown)。</li>
+                    </ul>
+                    <a href="https://developers.googleblog.com/en/tags/gemini-api/" target="_blank"
+                        class="category-link">查看 Google 開發者部落格最新 Prompt 技巧 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 21. GenTabs -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">21. Google GenTabs AI 標籤管理</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">利用生成式 AI 自動分類與組織你的瀏覽器分頁，提升多任務處理效率。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>解決瀏覽器「分頁地獄」的黑科技</h3>
+                    <p>當你在進行深度研究時，往往會開起數十個甚至上百個分頁。GenTabs 是 Google 實驗室推出的一項創新功能，它利用了端側模型 (On-device model)
+                        高效處理標籤標題與內容摘要。</p>
+                    <ul>
+                        <li><strong>智能命名與歸類:</strong> 它能根據內容識別出「AI 論文研究」、「機票酒店比價」、「React 官方文件」等。這不再只是簡單的關鍵字匹配，而是語意理解。
+                        </li>
+                        <li><strong>內容摘要預覽:</strong> 懸浮在群組上時，AI 能提供該群組內所有分頁的快速摘要，讓你不需要逐一打開確認。</li>
+                        <li><strong>自動清理建議:</strong> 識別出已經兩天沒點擊且與當前工作無關的分頁，主動建議關閉或封存。</li>
+                    </ul>
+                    <a href="https://chrome.google.com/webstore/category/extensions" target="_blank"
+                        class="category-link">到 Chrome 線上應用程式商店搜尋 AI Extensions →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 23. Google CC Assistant -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">23. Google CC AI 生產力助理</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">深入探索 Google Cloud Ecosystem 中的代碼編寫助理 (Gemini for Google Cloud)。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>企業級開發的 AI 後盾</h3>
+                    <p>Gemini for Google Cloud (前身為 Duet AI) 提供了開發生命全週期的支持。它不僅是一個 Chatbot，而是深度整合在 Google Cloud
+                        Console、IDE (如 VS Code 和 IntelliJ) 以及 Firebase 中的開發輔助工具。</p>
+                    <h3>核心優勢與實踐</h3>
+                    <ul>
+                        <li><strong>架構諮詢與自動生成:</strong> 你可以直接詢問：「如何在 GCP 上部署一個具備自動縮放功能的微服務？」它會給出完整的架構圖建議與對應的 Terraform
+                            腳本。</li>
+                        <li><strong>日誌分析 (Log Analysis):</strong> 當服務報錯時，它能自動掃描 Cloud
+                            Logging，解釋錯誤代碼的原因並提供修復代碼，且能模擬錯誤修復後的影響。</li>
+                        <li><strong>SQL 優化與大數據分析:</strong> 為 BigQuery 的超大型查詢提供優化建議，並能直接根據自然語言描述生成複雜的 SQL
+                            查詢語句，極大降低了數據分析的門檻。</li>
+                    </ul>
+                    <a href="https://cloud.google.com/gemini" target="_blank" class="category-link">了解 Google Cloud
+                        Gemini 詳情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 24. Google Skills -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">24. Google Skills 職場培訓課程</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">利用 Google 官方資源快速提升 AI 素養，獲取權威認證。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>Grow with Google AI 系列</h3>
+                    <p>Google 推出了多項針對非技術人員和初級開發者的免費 AI 課程。這些課程重點不在於數學公式，而在於「應用與職涯升級」。完成這些課程是建立個人 AI 工作流的最佳起點。</p>
+                    <ul>
+                        <li><strong>AI Essentials:</strong> 由 Google 專家授課，學習如何在日常工作中運用 AI 節省時間（如自動摘要郵件、輔助數據分析）。</li>
+                        <li><strong>Generative AI Introduction:</strong> 深入淺出解釋大模型背後的原理，適合零基礎。</li>
+                        <li><strong>認證價值:</strong> 完成課程後可獲得 Google 頒發的數字證書，在 LinkedIn 上具備不錯的認可度。</li>
+                    </ul>
+                    <a href="https://grow.google/ai-essentials/" target="_blank" class="category-link">前往課程官網領取認證 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 27. AI + GAS -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">27. AI + GAS 自動化生成表單</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">組合 Google Apps Script 與 Gemini API，實現辦公自動化的高級形態。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>低代碼開發的語意化升級</h3>
+                    <p>Google Apps Script (GAS) 是辦公室自動化的神器。結合 Gemini API 後，它可以實現從「閱讀一封報名需求郵件」到「自動建立一個 Google Forms
+                        報名表」的全自動閉環。這種能力讓非開發人員也能建立極其複雜的業務流程。</p>
+                    <div class="step-box">
+                        <strong>實施方案：</strong><br>
+                        1. <strong>攔截郵件:</strong> 使用 GAS 監聽特定 Gmail Label。<br>
+                        2. <strong>語意解析:</strong> 調用 Gemini API 提取表單所需欄位（例如：姓名、電話、選擇題選項）。<br>
+                        3. <strong>自動生成:</strong> 使用 <code>FormApp.create()</code> 動態生成問題表單並將連結回傳給用戶。
+                    </div>
+                    <a href="https://developers.google.com/apps-script" target="_blank" class="category-link">查看 Apps
+                        Script 官方文檔 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 28. mite.now -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">28. mite.now 部署工具</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">一鍵將你的 AI Studio 測試成果轉換為可對外分享的 Web 應用。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>從 Prompt 到 Product 的最後一哩路</h3>
+                    <p>mite.now 是一個開源項目，旨在簡化 Google AI 應用的原型開發。如果你在 AI Studio 裡寫好了一個完美的 System Instruction，mite.now
+                        可以幫你快速生成前端界面，省去了手寫 React 樣板代碼的痛苦。</p>
+                    <ul>
+                        <li><strong>極速部署:</strong> 只需要提供 API Key 和 Prompt 設定，即可生成具備聊天界面的 Web 連結。</li>
+                        <li><strong>開源可控:</strong> 可在 GitHub 上找到源碼，支持自定義部署到 Zeabur 或 Vercel，方便你進行更進階的 UI 定制。</li>
+                    </ul>
+                    <a href="https://github.com/mite-now/mite" target="_blank" class="category-link">前往 mite.now GitHub
+                        倉庫 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 29. GPT-SoVITS + Google Antigravity -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">29. GPT-SoVITS + Google Antigravity</h2>
+                        <span class="priority-badge priority-medium">Medium</span>
+                    </div>
+                    <p class="topic-text">結合最強開源語音克隆技術與 Google 的多模態框架。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>高品質 AI 內容創作的極致體驗</h3>
+                    <p>GPT-SoVITS 是目前開源界最強大的少樣本語音克隆模型。結合 Antigravity (Google 內部的高級 AI 協同理念)，可以實現具備特定音色的 AI
+                        影片導覽系統。想像一下，用你熟悉的親友聲音或者你最喜歡的配音員聲音來為你導讀複雜的技術文檔。</p>
+                    <p>這對於教育類 App 或導覽類應用至關重要，能極大提升用戶的沉浸感，並減少內容生產過程中的錄音成本。</p>
+                    <a href="https://github.com/RVC-Boss/GPT-SoVITS" target="_blank" class="category-link">查看 GPT-SoVITS
+                        原始碼 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 32. Gemini Canvas on Zeabur -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">32. Gemini Canvas 部署到 Zeabur</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">將動態 AI 創意畫板託管於高性能雲端平台。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>高效能託管與創意實踐</h3>
+                    <p>Zeabur 是一個優秀的 PaaS 平台，對容器化部署極其友好。將 Gemini 驅動的 Canvas
+                        畫板部署於此，可以利用其邊緣網絡加速。這對於需要頻繁前後端交互的繪畫、創意類應用非常友好，確保了低延遲的響應效果。</p>
+                    <p>這類應用通常結合了 Gemini 的視圖理解與 Canvas API，讓用戶可以通過自然語言直接「畫出」複雜的設計圖形。部署在 Zeabur 上則能保證其高可用性。</p>
+                    <a href="https://zeabur.com/" target="_blank" class="category-link">前往 Zeabur 官網開展你的部署之旅 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 33. NotebookLM OCR Fix -->
+        <div class="topic-card" onclick="this.classList.toggle('active')">
+            <div class="topic-summary">
+                <div class="topic-info-brief">
+                    <div class="topic-header">
+                        <h2 class="topic-title">33. NotebookLM 圖檔文字修正</h2>
+                        <span class="priority-badge priority-low">Low</span>
+                    </div>
+                    <p class="topic-text">利用 Gemini 1.5 Pro 的頂級多模態能力修正 NotebookLM 中的亂碼問題。</p>
+                </div>
+                <div class="expand-icon">▼</div>
+            </div>
+            <div class="expanded-content">
+                <div class="content-inner">
+                    <h3>讓知識庫更精確：解決 OCR 最後一哩路</h3>
+                    <p>NotebookLM 有時在解析掃描版 PDF 時會出現文字偏移或亂碼。這通常是因為傳統 OCR 引擎在處理複雜背景時的失效。通過調用 Gemini 1.5 Pro 的 Vision
+                        功能，可以對這些錯誤區域進行高維度的「語意校對」，確保你的知識庫數據是 100% 正確的。</p>
+                    <p>你可以直接截圖有爭議的區塊，讓 Gemini 對比上下文進行修正。這讓 NotebookLM 成為真正的「專家級」個人筆記本。</p>
+                    <a href="https://notebooklm.google/" target="_blank" class="category-link">立即體驗 NotebookLM 再進化 →</a>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>學習中心 | Google AI 生態專頁</p>
+        <p>持續更新中 · 2026</p>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+            star.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>
